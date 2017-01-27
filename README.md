@@ -83,7 +83,7 @@ Some of the data was from
 
 
 ## Pretrained Embeddings
-I used Stanford's Glove Pretrained Embeddings PCA-ed to 30 dimensions. This speeded up the
+I used Stanford's Glove Pretrained Embeddings PCA-ed to 30 dimensions. This sped up the
 training.
 
 
