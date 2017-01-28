@@ -30,5 +30,5 @@ def fetch_headlines(source_details):
 clickbait_headlines = list(itertools.chain.from_iterable(fetch_headlines(details) for details in tqdm.tqdm(clickbait_details, desc="fetching clickbait")))
 genuine_headlines = list(itertools.chain.from_iterable(fetch_headlines(details) for details in tqdm.tqdm(genuine_details, desc="fetching genuine")))
 
-open("data/clickbait.txt", "a+").write("\n" + "\n".join(clickbait_headlines).encode("ascii", "ignore"))
-open("data/genuine.txt", "a+").write("\n" + "\n".join(genuine_headlines).encode("ascii", "ignore"))
+open("data/clickbait.txt", "w").write("\n" + "\n".join(clickbait_headlines).encode("ascii", "ignore"))
+open("data/genuine.txt", "w").write("\n" + "\n".join(genuine_headlines).encode("ascii", "ignore"))
