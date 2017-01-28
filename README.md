@@ -2,6 +2,14 @@
 
 Detects clickbait headlines using deep learning.
 
+## Requirements
+Python 2.7.12
+Keras 1.2.1
+Tensorflow 0.12.1
+Numpy 1.11.1
+NLTK 3.2.1
+
+
 ## Accuracy
 Training Accuracy after 25 epochs = 92.3 %
 
