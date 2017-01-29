@@ -27,7 +27,7 @@ def clean(text):
         text = text.replace(str(i), " " + str(i) + " ")
     text = MATCH_MULTIPLE_SPACES.sub(" ", text)
     return text
-
+print model.summary()
 headline = sys.argv[1].encode("ascii", "ignore")
 inputs = sequence.pad_sequences([words_to_indices(clean(headline).split())], maxlen=SEQUENCE_LENGTH)
 clickbaitiness = model.predict(inputs)[0, 0]

@@ -69,33 +69,37 @@ Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
 embedding_1 (Embedding)          (None, 20, 30)        195000      embedding_input_1[0][0]          
 ____________________________________________________________________________________________________
-batchnormalization_1 (BatchNorma (None, 20, 30)        120         embedding_1[0][0]                
+convolution1d_1 (Convolution1D)  (None, 19, 32)        1952        embedding_1[0][0]                
 ____________________________________________________________________________________________________
-convolution1d_1 (Convolution1D)  (None, 19, 16)        976         batchnormalization_1[0][0]       
+batchnormalization_1 (BatchNorma (None, 19, 32)        128         convolution1d_1[0][0]            
 ____________________________________________________________________________________________________
-activation_1 (Activation)        (None, 19, 16)        0           convolution1d_1[0][0]            
+activation_1 (Activation)        (None, 19, 32)        0           batchnormalization_1[0][0]       
 ____________________________________________________________________________________________________
-maxpooling1d_1 (MaxPooling1D)    (None, 9, 16)         0           activation_1[0][0]               
+convolution1d_2 (Convolution1D)  (None, 18, 32)        2080        activation_1[0][0]               
 ____________________________________________________________________________________________________
-batchnormalization_2 (BatchNorma (None, 9, 16)         64          maxpooling1d_1[0][0]             
+batchnormalization_2 (BatchNorma (None, 18, 32)        128         convolution1d_2[0][0]            
 ____________________________________________________________________________________________________
-convolution1d_2 (Convolution1D)  (None, 8, 16)         528         batchnormalization_2[0][0]       
+activation_2 (Activation)        (None, 18, 32)        0           batchnormalization_2[0][0]       
 ____________________________________________________________________________________________________
-activation_2 (Activation)        (None, 8, 16)         0           convolution1d_2[0][0]            
+convolution1d_3 (Convolution1D)  (None, 17, 32)        2080        activation_2[0][0]               
 ____________________________________________________________________________________________________
-maxpooling1d_2 (MaxPooling1D)    (None, 1, 16)         0           activation_2[0][0]               
+batchnormalization_3 (BatchNorma (None, 17, 32)        128         convolution1d_3[0][0]            
 ____________________________________________________________________________________________________
-flatten_1 (Flatten)              (None, 16)            0           maxpooling1d_2[0][0]             
+activation_3 (Activation)        (None, 17, 32)        0           batchnormalization_3[0][0]       
 ____________________________________________________________________________________________________
-batchnormalization_3 (BatchNorma (None, 16)            64          flatten_1[0][0]                  
+maxpooling1d_1 (MaxPooling1D)    (None, 1, 32)         0           activation_3[0][0]               
 ____________________________________________________________________________________________________
-dense_1 (Dense)                  (None, 1)             17          batchnormalization_3[0][0]       
+flatten_1 (Flatten)              (None, 32)            0           maxpooling1d_1[0][0]             
 ____________________________________________________________________________________________________
-activation_3 (Activation)        (None, 1)             0           dense_1[0][0]                    
+dense_1 (Dense)                  (None, 1)             33          flatten_1[0][0]                  
+____________________________________________________________________________________________________
+batchnormalization_4 (BatchNorma (None, 1)             4           dense_1[0][0]                    
+____________________________________________________________________________________________________
+activation_4 (Activation)        (None, 1)             0           batchnormalization_4[0][0]       
 ====================================================================================================
-Total params: 196,769
-Trainable params: 196,645
-Non-trainable params: 124
+Total params: 201,533
+Trainable params: 201,339
+Non-trainable params: 194
 ____________________________________________________________________________________________________
 
 ```
