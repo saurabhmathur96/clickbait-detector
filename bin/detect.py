@@ -10,7 +10,6 @@ SEQUENCE_LENGTH = 20
 UNK = "<UNK>"
 PAD = "<PAD>"
 
-model = load_model("models/detector.h5")
 
 
 vocabulary = open("data/vocabulary.txt").read().split("\n")
@@ -27,8 +26,16 @@ def clean(text):
         text = text.replace(str(i), " " + str(i) + " ")
     text = MATCH_MULTIPLE_SPACES.sub(" ", text)
     return text
-print model.summary()
-headline = sys.argv[1].encode("ascii", "ignore")
-inputs = sequence.pad_sequences([words_to_indices(clean(headline).split())], maxlen=SEQUENCE_LENGTH)
-clickbaitiness = model.predict(inputs)[0, 0]
-print ("headline is {0} % clickbaity".format(round(clickbaitiness * 100, 2)))
+
+class Predictor (object):
+    def __init__(self, model_path):
+        self.model = load_model(model_path)
+    
+    def predict (self, headline):
+        headline = headline.encode("ascii", "ignore")
+        inputs = sequence.pad_sequences([words_to_indices(clean(headline).lower().split())], maxlen=SEQUENCE_LENGTH)
+        clickbaitiness = self.model.predict(inputs)[0, 0]
+        return clickbaitiness
+predictor = Predictor("models/detector.h5")
+if __name__ == "__main__":
+    print ("headline is {0} % clickbaity".format(round(predictor.predict(sys.argv[1]) * 100, 2)))

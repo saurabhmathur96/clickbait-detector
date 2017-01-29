@@ -47,7 +47,7 @@ headline is 0.33 % clickbaity
 ```
 $ python bin/detect.py "Just 22 Cute Animal Pictures You Need Right Now"
 Using TensorFlow backend.
-eadline is 85.38 % clickbaity
+headline is 85.38 % clickbaity
 ```
 
 ```
