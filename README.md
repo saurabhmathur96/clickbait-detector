@@ -2,7 +2,7 @@
 
 Detects clickbait headlines using deep learning.
 
-[Chrome Extension](https://chrome.google.com/webstore/detail/this-is-clickbait/ppklhdlfnadnlnllnenceabhldpnafjm) built by [rahulkapoor90](https://github.com/rahulkapoor90)
+Find the Chrome Extension [here](https://chrome.google.com/webstore/detail/this-is-clickbait/ppklhdlfnadnlnllnenceabhldpnafjm) ( built by [rahulkapoor90](https://github.com/rahulkapoor90) )
 
 ## Requirements
 - Python 2.7.12
