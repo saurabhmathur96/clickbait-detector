@@ -9,6 +9,27 @@ Detects clickbait headlines using deep learning.
 - Numpy 1.11.1
 - NLTK 3.2.1
 
+## Getting Started
+1. Install a virtualenv in the project directory
+
+       virtualenv venv
+
+2. Activate the virtualenv
+    - On Windows:
+
+          cd venv/Scripts
+          activate
+      
+    - On Linux
+    
+          source venv/bin/activate
+
+3. Install the requirements
+
+        pip install -r requirements.txt
+        
+4. Try it out!
+    Try running one of the [examples](#examples).
 
 ## Accuracy
 Training Accuracy after 25 epochs = 92.3 %
