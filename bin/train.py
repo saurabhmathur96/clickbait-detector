@@ -27,6 +27,10 @@ genuine = sequence.pad_sequences([words_to_indices(sentence.split()) for sentenc
 
 X = np.concatenate([clickbait, genuine], axis=0)
 y = np.array([[1] * clickbait.shape[0] + [0] * genuine.shape[0]], dtype=np.int32).T
+p = np.random.permutation(y.shape[0])
+X = X[p]
+y = y[p]
+
 
 if os.path.exists(MODEL_FILE):
     model = load_model(MODEL_FILE)
@@ -34,17 +38,20 @@ if os.path.exists(MODEL_FILE):
 else:
     model = Sequential()
     model.add(Embedding(len(vocabulary), EMBEDDING_DIMENSION, weights=[embedding_weights], input_length=SEQUENCE_LENGTH, trainable=False))
-    model.add(BatchNormalization())
+    
     model.add(Convolution1D(16, 2))
+    model.add(BatchNormalization())
     model.add(Activation("relu"))
     model.add(MaxPooling1D(2))
-    model.add(BatchNormalization())
+    
     model.add(Convolution1D(16, 2))
+    model.add(BatchNormalization())
     model.add(Activation("relu"))
     model.add(MaxPooling1D(8))
     model.add(Flatten())
-    model.add(BatchNormalization())
+    
     model.add(Dense(1, bias=True))
+    model.add(BatchNormalization())
     model.add(Activation("sigmoid"))
 
 optimizer = RMSprop()

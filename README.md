@@ -32,34 +32,34 @@ Detects clickbait headlines using deep learning.
     Try running one of the [examples](#examples).
 
 ## Accuracy
-Training Accuracy after 25 epochs = 92.3 %
+Training Accuracy after 25 epochs = 93.8 % (loss = 0.1484)
 
-Validation Accuracy after 25 epochs = 88.6 %
+Validation Accuracy after 25 epochs = 90.15 % (loss = 0.2670)
 
 ## Examples
 
 ```
 $ python bin/detect.py "Novak Djokovic stunned as Australian Open title defence ends against Denis Istomin"
 Using TensorFlow backend.
-headline is 5.17 % clickbaity
+headline is 0.33 % clickbaity
 ```
 
 ```
 $ python bin/detect.py "Just 22 Cute Animal Pictures You Need Right Now"
 Using TensorFlow backend.
-headline is 91.31 % clickbaity
+eadline is 85.38 % clickbaity
 ```
 
 ```
 $ python bin/detect.py " 15 Beautifully Created Doors You Need To See Before You Die. The One In Soho Blew Me Away"
 Using TensorFlow backend.
-headline is 80.2 % clickbaity
+headline is 52.29 % clickbaity
 ```
 
 ```
 $ python bin/detect.py "French presidential candidate Emmanuel Macrons anti-system angle is a sham | Philippe Marlire"
 Using TensorFlow backend.
-headline is 0.07 % clickbaity
+headline is 0.05 % clickbaity
 ```
 
 ## Model Summary
@@ -97,6 +97,7 @@ Total params: 196,769
 Trainable params: 196,645
 Non-trainable params: 124
 ____________________________________________________________________________________________________
+
 ```
 
 

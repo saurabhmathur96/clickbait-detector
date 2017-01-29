@@ -31,5 +31,4 @@ def clean(text):
 headline = sys.argv[1].encode("ascii", "ignore")
 inputs = sequence.pad_sequences([words_to_indices(clean(headline).split())], maxlen=SEQUENCE_LENGTH)
 clickbaitiness = model.predict(inputs)[0, 0]
-
 print ("headline is {0} % clickbaity".format(round(clickbaitiness * 100, 2)))
