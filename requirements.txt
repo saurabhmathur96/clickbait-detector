@@ -1,12 +1,19 @@
 appdirs==1.4.0
+click==6.7
+Flask==0.12
 funcsigs==1.0.2
+gunicorn==19.6.0
 h5py==2.6.0
+itsdangerous==0.24
+Jinja2==2.9.5
 Keras==1.2.1
+MarkupSafe==0.23
 mock==2.0.0
 nltk==3.2.1
 numpy==1.11.1
 packaging==16.8
 pbr==1.10.0
+pkg-resources==0.0.0
 protobuf==3.1.0.post1
 pyparsing==2.1.10
 PyYAML==3.12
@@ -14,3 +21,4 @@ scipy==0.18.1
 six==1.10.0
 tensorflow==0.12.1
 Theano==0.8.2
+Werkzeug==0.11.15
