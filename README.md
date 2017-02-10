@@ -39,25 +39,25 @@ Validation Accuracy after 25 epochs = 90.15 % (loss = 0.2670)
 ## Examples
 
 ```
-$ python bin/detect.py "Novak Djokovic stunned as Australian Open title defence ends against Denis Istomin"
+$ python src/detect.py "Novak Djokovic stunned as Australian Open title defence ends against Denis Istomin"
 Using TensorFlow backend.
 headline is 0.33 % clickbaity
 ```
 
 ```
-$ python bin/detect.py "Just 22 Cute Animal Pictures You Need Right Now"
+$ python src/detect.py "Just 22 Cute Animal Pictures You Need Right Now"
 Using TensorFlow backend.
 headline is 85.38 % clickbaity
 ```
 
 ```
-$ python bin/detect.py " 15 Beautifully Created Doors You Need To See Before You Die. The One In Soho Blew Me Away"
+$ python src/detect.py " 15 Beautifully Created Doors You Need To See Before You Die. The One In Soho Blew Me Away"
 Using TensorFlow backend.
 headline is 52.29 % clickbaity
 ```
 
 ```
-$ python bin/detect.py "French presidential candidate Emmanuel Macrons anti-system angle is a sham | Philippe Marlire"
+$ python src/detect.py "French presidential candidate Emmanuel Macrons anti-system angle is a sham | Philippe Marlire"
 Using TensorFlow backend.
 headline is 0.05 % clickbaity
 ```
@@ -123,8 +123,8 @@ training.
 
 ## Improving accuracy
 To improve Accuracy, 
-- Increase Embedding layer dimension (Currently it is 30) - `bin/preprocess_embeddings.py`
+- Increase Embedding layer dimension (Currently it is 30) - `src/preprocess_embeddings.py`
 - Use more data
-- Increase vocabulary size - `bin/preprocess_text.py`
-- Increase maximum sequence length - `bin/train.py`
+- Increase vocabulary size - `src/preprocess_text.py`
+- Increase maximum sequence length - `src/train.py`
 - Do better data cleaning
